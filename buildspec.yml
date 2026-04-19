@@ -4,12 +4,16 @@ phases:
   install:
     runtime-versions:
       python: 3.11
+
     commands:
+      - echo Installing dependencies...
+      - cd flask-elastic-app/app
       - pip install -r requirements.txt
 
   build:
     commands:
-      - echo Build completed
+      - echo Build started
+      - python app.py || true
 
 artifacts:
   files:
